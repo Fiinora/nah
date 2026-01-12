@@ -12,6 +12,8 @@ class greetings extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+
+          //widget bloc untuk mereturn value state baru, misal untuk nampilin setelah state berubah
             BlocBuilder<GreetingBloc, String>(
         builder: (context, pesanSekarang) {
           return Text(
@@ -27,6 +29,7 @@ class greetings extends StatelessWidget {
           ElevatedButton(
                     onPressed: () {
                       // KIRIM SURAT: "Tolong jalanin SayMorning"
+                      // ini tempat saat user di ui ngetrigger event
                       context.read<GreetingBloc>().add(sayMorning());
                     },
                     child: Text("Pagi"),
